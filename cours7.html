@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cours de Pr. Tissir</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+        }
+        iframe {
+            width: 80%;
+            height: 600px;
+            border: none;
+            margin-top: 20px;
+        }
+        .back-button {
+            padding: 10px;
+            background-color: rgb(255, 159, 32);
+            color: white;
+            border: none;
+            cursor: pointer;
+            margin-bottom: 20px;
+        }
+        select {
+            padding: 10px;
+            font-size: 16px;
+            margin: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <button class="back-button" onclick="history.back()">← Retour</button>
+
+    <h1>📖 Cours de Pr. Omari</h1>
+
+    <!-- Sélection du cours -->
+    <label for="cours">Sélectionner un cours :</label>
+    <select id="cours" onchange="changerCours()">
+        <option value="C:\Users\bb\Downloads\cours S 2\PROGRAMMATION WEB\Chapitre_1___Introduction_à_la_Programmation_Orientée_Objet.pdf">PROGRAMMATION WEB1</option>
+        <option value="C:\Users\bb\Downloads\cours S 2\PROGRAMMATION WEB\Chapitre_2___Exploration_du_Langage_HTML (2).pdf">PROGRAMMATION WEB2</option>
+        <option value="C:\Users\bb\Downloads\cours S 2\PROGRAMMATION WEB\Chapitre_3___Exploration_du_Langage_CSS.pdf">PROGRAMMATION WEB3</option>
+    
+    </select>
+
+    <!-- Affichage du PDF -->
+    <iframe id="pdfViewer" src="C:\Users\bb\Downloads\cours S 2\PROGRAMMATION WEB\Chapitre_1___Introduction_à_la_Programmation_Orientée_Objet.pdf"></iframe>
+
+    <script>
+        function changerCours() {
+            var select = document.getElementById("cours");
+            var pdfViewer = document.getElementById("pdfViewer");
+            pdfViewer.src = select.value;
+        }
+    </script>
+
+</body>
+</html>
